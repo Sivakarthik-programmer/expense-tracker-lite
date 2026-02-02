@@ -1,0 +1,1 @@
+This is a sample expense app to track the expenses. created using basic html, css and javascript.

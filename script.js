@@ -17,3 +17,24 @@ function renderExpenses() {
 
 // Run when page loads
 renderExpenses();
+
+
+function addExpense() {
+  const nameInput = document.getElementById("expense-name");
+  const amountInput = document.getElementById("expense-amount");
+
+  const name = nameInput.value.trim();
+  const amount = Number(amountInput.value);
+
+  if (name === "" || amount <= 0) {
+    alert("Please enter valid expense details");
+    return;
+  }
+
+  expenses.push({ name, amount });
+
+  nameInput.value = "";
+  amountInput.value = "";
+
+  renderExpenses();
+}
