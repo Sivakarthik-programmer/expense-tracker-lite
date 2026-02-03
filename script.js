@@ -13,6 +13,7 @@ function renderExpenses() {
     li.innerText = `${expense.name} - ₹${expense.amount}`;
     list.appendChild(li);
   });
+  calculateTotal();
 }
 
 // Run when page loads
@@ -37,4 +38,15 @@ function addExpense() {
   amountInput.value = "";
 
   renderExpenses();
+}
+
+
+function calculateTotal() {
+  let total = 0;
+
+  expenses.forEach(expense => {
+    total += expense.amount;
+  });
+
+  document.getElementById("total").innerText = `Total: ₹${total}`;
 }
